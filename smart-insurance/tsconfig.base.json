@@ -14,7 +14,12 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@smart-insurance/orders": ["libs/orders/src/index.ts"],
+      "@smart-insurance/products": ["libs/products/src/index.ts"],
+      "@smart-insurance/ui": ["libs/ui/src/index.ts"],
+      "@smart-insurance/users": ["libs/users/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }

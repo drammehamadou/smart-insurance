@@ -4,9 +4,10 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 import { AppComponent } from './app.component';
 import { RouterModule } from '@angular/router';
+import { DashboardComponent } from './pages/dashboard/dashboard.component';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, DashboardComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,

@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { UiModule } from '@smart-insurance/ui';
 
 import {ButtonModule} from 'primeng/button';
 
@@ -11,9 +12,16 @@ import { ProductFormComponent } from './pages/products/product-form/product-form
 import { ContactusComponent } from './pages/contactus/contactus.component';
 import { AboutusComponent } from './pages/aboutus/aboutus.component';
 import { RouterModule, Routes } from '@angular/router';
+import { HeaderComponent } from './shared/header/header.component';
+import { FooterComponent } from './shared/footer/footer.component';
+import { NavComponent } from './shared/nav/nav.component';
+import { NewsComponent } from './pages/news/news.component';
 
 const routes: Routes = [
   { path: '', component: HomePageComponent },
+  { path: 'aboutus', component: AboutusComponent },
+  { path: 'news', component: NewsComponent },
+  { path: 'contactus', component: ContactusComponent },
   {path: 'packages', component: ProductListComponent}
 ]
 
@@ -23,11 +31,15 @@ const routes: Routes = [
     ProductListComponent, 
     ProductFormComponent, 
     ContactusComponent, 
-    AboutusComponent],
+    AboutusComponent, 
+    HeaderComponent, 
+    FooterComponent, 
+    NavComponent, NewsComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     ButtonModule,
+    UiModule,
     RouterModule.forRoot(routes)
   ],
   providers: [],

@@ -18,12 +18,13 @@
             "tsConfig": "apps/admin/tsconfig.app.json",
             "inlineStyleLanguage": "scss",
             "assets": ["apps/admin/src/favicon.ico", "apps/admin/src/assets"],
-            "styles": ["apps/admin/src/styles.scss",
-                        "./node_modules/primeflex/primeflex.css",
-                        "./node_modules/primeicons/primeicons.css",
-                        "./node_modules/primeng/resources/themes/saga-blue/theme.css",
-                        "./node_modules/primeng/resources/primeng.min.css"
-                      ],
+            "styles": [
+              "apps/admin/src/styles.scss",
+              "./node_modules/primeflex/primeflex.css",
+              "./node_modules/primeicons/primeicons.css",
+              "./node_modules/primeng/resources/themes/saga-blue/theme.css",
+              "./node_modules/primeng/resources/primeng.min.css"
+            ],
             "scripts": []
           },
           "configurations": {
@@ -145,7 +146,8 @@
               "apps/frontend/src/favicon.ico",
               "apps/frontend/src/assets"
             ],
-            "styles": ["apps/frontend/src/styles.scss",
+            "styles": [
+              "apps/frontend/src/styles.scss",
               "./node_modules/primeflex/primeflex.css",
               "./node_modules/primeicons/primeicons.css",
               "./node_modules/primeng/resources/themes/saga-blue/theme.css",
@@ -251,6 +253,104 @@
       },
       "tags": [],
       "implicitDependencies": ["frontend"]
+    },
+    "orders": {
+      "projectType": "library",
+      "root": "libs/orders",
+      "sourceRoot": "libs/orders/src",
+      "prefix": "smart-insurance",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/orders"],
+          "options": {
+            "jestConfig": "libs/orders/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/orders/src/**/*.ts",
+              "libs/orders/src/**/*.html"
+            ]
+          }
+        }
+      },
+      "tags": []
+    },
+    "products": {
+      "root": "libs/products",
+      "sourceRoot": "libs/products/src",
+      "projectType": "library",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "outputs": ["{options.outputFile}"],
+          "options": {
+            "lintFilePatterns": ["libs/products/**/*.ts"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/products"],
+          "options": {
+            "jestConfig": "libs/products/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      },
+      "tags": []
+    },
+    "ui": {
+      "root": "libs/ui",
+      "sourceRoot": "libs/ui/src",
+      "projectType": "library",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "outputs": ["{options.outputFile}"],
+          "options": {
+            "lintFilePatterns": ["libs/ui/**/*.ts"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/ui"],
+          "options": {
+            "jestConfig": "libs/ui/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      },
+      "tags": []
+    },
+    "users": {
+      "projectType": "library",
+      "root": "libs/users",
+      "sourceRoot": "libs/users/src",
+      "prefix": "smart-insurance",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/users"],
+          "options": {
+            "jestConfig": "libs/users/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/users/src/**/*.ts",
+              "libs/users/src/**/*.html"
+            ]
+          }
+        }
+      },
+      "tags": []
     }
   }
 }
