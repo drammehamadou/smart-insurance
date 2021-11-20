@@ -39,7 +39,7 @@ mongoose
     dbName: "smart-database",
   })
   .then(() => {
-    console.log("Database Connection is ready...");
+    console.log("Database is Connected...");
   })
   .catch((err) => {
     console.log(err);
