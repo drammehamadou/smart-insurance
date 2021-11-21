@@ -9,7 +9,11 @@ import { ShellComponent } from './shared/shell/shell.component';
 import { SidebarComponent } from './shared/sidebar/sidebar.component';
 
 const routes: Routes = [
-  { path: '', component: ShellComponent },
+  { path: '', component: ShellComponent,
+  children: [
+    { path: 'dashboard', component: DashboardComponent }
+  ] 
+},
  
 ]
 
