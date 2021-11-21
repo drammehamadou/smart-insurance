@@ -4,6 +4,8 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { UiModule } from '@smart-insurance/ui';
 
 import {ButtonModule} from 'primeng/button';
+import {DataViewModule} from 'primeng/dataview';
+import {RatingModule} from 'primeng/rating';
 
 import { AppComponent } from './app.component';
 import { HomePageComponent } from './pages/home-page/home-page.component';
@@ -40,6 +42,8 @@ const routes: Routes = [
     BrowserAnimationsModule,
     ButtonModule,
     UiModule,
+    DataViewModule,
+    RatingModule,
     RouterModule.forRoot(routes)
   ],
   providers: [],
