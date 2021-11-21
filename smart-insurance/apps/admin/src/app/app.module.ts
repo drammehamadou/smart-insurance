@@ -2,16 +2,30 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
+import {CardModule} from 'primeng/card';
+import {ConfirmDialogModule} from 'primeng/confirmdialog';
+import {ConfirmationService, MessageService} from 'primeng/api';
+import {ToolbarModule} from 'primeng/toolbar';
+import {ButtonModule} from 'primeng/button';
+import {TableModule} from 'primeng/table';
+import {ToastModule} from 'primeng/toast';
+
 import { AppComponent } from './app.component';
 import { RouterModule, Routes } from '@angular/router';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { ShellComponent } from './shared/shell/shell.component';
 import { SidebarComponent } from './shared/sidebar/sidebar.component';
+import { CategoriesListComponent } from './pages/categories/categories-list/categories-list.component';
+import { CategoriesFormComponent } from './pages/categories/categories-form/categories-form.component';
+import { CategoriesService } from '@smart-insurance/products';
+import { HttpClientModule } from '@angular/common/http';
 
 const routes: Routes = [
   { path: '', component: ShellComponent,
   children: [
-    { path: 'dashboard', component: DashboardComponent }
+    { path: 'dashboard', component: DashboardComponent },
+    { path: 'categories', component: CategoriesListComponent },
+    { path: 'categories:id', component: CategoriesListComponent }
   ] 
 },
  
@@ -22,13 +36,24 @@ const routes: Routes = [
     AppComponent, 
     DashboardComponent, 
     ShellComponent, 
-    SidebarComponent],
+    SidebarComponent, 
+    CategoriesListComponent, 
+    CategoriesFormComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    HttpClientModule,
+    CardModule,
+    ConfirmDialogModule,
+    ToolbarModule,
+    ButtonModule,
+    TableModule,
+    ToastModule,
     RouterModule.forRoot(routes, { initialNavigation: 'enabledBlocking' }),
   ],
-  providers: [],
+  providers: [CategoriesService,
+    ConfirmationService, MessageService,
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
