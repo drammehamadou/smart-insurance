@@ -3,3 +3,73 @@
 <h3>Getting a quote is stress-free and easy</h3>
 
 <h5>We’re rated gold by Fairer Finance for Customer Experience and Platinum by Feefo for customer service, so you’re in good hands with Smart Insurance®</h5>
+<p-toast></p-toast>
+<div class="admin-page">
+  <p-card header="Categories" subheader="List of all categories">
+    <div class="p-grid">
+      <div class="p-col-12">
+        <p-toolbar>
+          <div class="p-toolbar-group-left">
+            <p-button
+              styleClass="p-button-success"
+              label="New"
+              icon="pi pi-plus"
+              routerLink="form"
+            ></p-button>
+          </div>
+        </p-toolbar>
+      </div>
+    </div>
+    <div class="p-grid">
+      <div class="p-col-12">
+        <p-table [value]="categories" styleClass="p-datatable-gridlines" [paginator]="true" [rows]="10" [showCurrentPageReport]="true" responsiveLayout="scroll"
+        currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries" [rowsPerPageOptions]="[10,25,50]">
+          <ng-template pTemplate="header">
+            <tr>
+                <th>#</th>
+              <th pSortableColumn="name">Name <p-sortIcon field="name"></p-sortIcon></th>
+              <th>Icon</th>
+              <th>Color</th>
+              <th>Edit</th>
+              <th>Delete</th>
+            </tr>
+          </ng-template>
+          <ng-template pTemplate="body" let-category let-i="rowIndex" >
+            <tr>
+                <td>{{i + 1}}</td>
+              <td>{{ category.name }}</td>
+              <td><i style="font-size: 2rem" class="pi" [ngClass]="'pi-' + category.icon"></i></td>
+              <td>
+                <i
+                  class="pi pi-circle-on"
+                  style="font-size: 2rem"
+                  [ngStyle]="{ color: category.color }"
+                ></i>
+              </td>
+              <!-- <td>
+                <p-button
+                (click)="updateCategory(category.id)"
+                styleClass="p-button-success"
+                icon="pi pi-pencil"
+              ></p-button>
+              </td>
+              <td>
+                <p-button
+                  (click)="deleteCategory(category.id)"
+                  styleClass="p-button-danger p-mr-2"
+                  icon="pi pi-trash"
+                ></p-button>
+              </td> -->
+            </tr>
+          </ng-template>
+        </p-table>
+      </div>
+    </div>
+  </p-card>
+</div>
+<p-confirmDialog
+  [style]="{ width: '50vw' }"
+  [baseZIndex]="10000"
+  rejectButtonStyleClass="p-button-text"
+></p-confirmDialog>
+

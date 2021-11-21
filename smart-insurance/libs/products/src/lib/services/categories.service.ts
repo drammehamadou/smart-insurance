@@ -17,7 +17,7 @@ export class CategoriesService {
   }
 
   getCategory(categoryId: string): Observable<Category> {
-    return this.http.get<Category>(`${`http://localhost:3000/api/v1/categories/`}/${categoryId}`);
+    return this.http.get<Category>(`${'http://localhost:3000/api/v1/categories/'}/${categoryId}`);
   }
 
   createCategory(category: Category): Observable<Category> {
@@ -25,10 +25,10 @@ export class CategoriesService {
   }
 
   updateCategory(category: Category): Observable<Category> {
-    return this.http.put<Category>(`${`http://localhost:3000/api/v1/categories/`}/${category.id}`, category);
+    return this.http.put<Category>(`${'http://localhost:3000/api/v1/categories/'}/${category.id}`, category);
   }
 
   deleteCategory(categoryId: string): Observable<any> {
-    return this.http.delete<any>(`${`http://localhost:3000/api/v1/categories/`}/${categoryId}`);
+    return this.http.delete<any>(`${'http://localhost:3000/api/v1/categories/'}/${categoryId}`);
   }
 }
