@@ -1,6 +1,17 @@
 <h3>Cart</h3>
 
-<div class="cart-item" *ngFor="let package of packages">
-  <span>{{ package.name }}</span>
-  <span>{{ package.price | currency }}</span>
-</div>
+<p-card>
+  <div class="grid">
+    <div class="col-12 md:col-6 lg:col-3">
+      <div class="cart-item" *ngFor="let package of packages">
+        <div><span>Package Name: {{ package.name }}</span></div>
+        <div><span>Category: {{ package.category.name }}</span></div>
+        <div><span>Type: {{ package.productType }}</span></div>
+        <div><span>Coverage: {{ package.coverage }}</span></div>
+        <div><span>Price: {{ package.price | currency }}</span></div>
+        <br>
+        <button pButton pRipple type="button" label="Buy" class="p-button-rounded"></button>
+      </div>
+    </div>
+  </div>
+</p-card>

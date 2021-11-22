@@ -17,8 +17,6 @@ import {DropdownModule} from 'primeng/dropdown';
 
 import { AppComponent } from './app.component';
 import { HomePageComponent } from './pages/home-page/home-page.component';
-import { ProductListComponent } from './pages/products/product-list/product-list.component';
-import { ProductFormComponent } from './pages/products/product-form/product-form.component';
 import { ContactusComponent } from './pages/contactus/contactus.component';
 import { AboutusComponent } from './pages/aboutus/aboutus.component';
 import { RouterModule, Routes } from '@angular/router';
@@ -29,29 +27,27 @@ import { NewsComponent } from './pages/news/news.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { CartComponent } from './pages/cart/cart.component';
+import { PackagesComponent } from './pages/packages/packages.component';
 
 const routes: Routes = [
   { path: '', component: HomePageComponent },
   { path: 'aboutus', component: AboutusComponent },
   { path: 'news', component: NewsComponent },
   { path: 'contactus', component: ContactusComponent },
-  {path: 'products/:productId', component: ProductFormComponent},
-  {path: 'packages', component: ProductListComponent},
-  {path: 'cart', component: CartComponent}
+  {path: 'cart', component: CartComponent},
+  {path: 'packages', component: PackagesComponent}
 ]
 
 @NgModule({
   declarations: [AppComponent, 
     HomePageComponent, 
-    ProductListComponent, 
-    ProductFormComponent, 
     ContactusComponent, 
     AboutusComponent, 
     HeaderComponent, 
     FooterComponent, 
     NavComponent, 
     NewsComponent, 
-    CartComponent],
+    CartComponent, PackagesComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,

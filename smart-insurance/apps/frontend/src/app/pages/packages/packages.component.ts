@@ -5,11 +5,11 @@ import {SelectItem} from 'primeng/api';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
-  selector: 'smart-insurance-product-list',
-  templateUrl: './product-list.component.html',
-  styleUrls: ['./product-list.component.scss']
+  selector: 'smart-insurance-packages',
+  templateUrl: './packages.component.html',
+  styleUrls: ['./packages.component.scss']
 })
-export class ProductListComponent implements OnInit {
+export class PackagesComponent implements OnInit {
   @Input() product: Product;
   products: Product[] = [];
   sortOptions: SelectItem[] = [];
@@ -32,12 +32,5 @@ export class ProductListComponent implements OnInit {
     window.alert('Your package has been added to the cart!');
   }
 
-  // addProductToCart() {
-  //   const cartItem: CartItem = {
-  //     productId: this.product.id,
-  //     quantity: 1
-  //   };
-  //   this.cartService.setCartItem(cartItem);
-  // }
 
 }
