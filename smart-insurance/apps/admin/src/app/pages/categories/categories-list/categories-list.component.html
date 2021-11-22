@@ -1,12 +1,12 @@
 <p-toast></p-toast>
 <div class="admin-page">
   <p-card header="Categories" subheader="List of all categories">
-    <div class="p-grid">
-      <div class="p-col-12">
+    <div class="grid">
+      <div class="col-12 md:col-6 lg:col-12">
         <p-toolbar>
           <div class="p-toolbar-group-left">
             <p-button
-              styleClass="p-button-success"
+              styleClass="p-button-primary"
               label="New"
               icon="pi pi-plus"
               routerLink="form"
@@ -15,8 +15,8 @@
         </p-toolbar>
       </div>
     </div>
-    <div class="p-grid">
-      <div class="p-col-12">
+    <div class="grid">
+      <div class="col-12 md:col-6 lg:col-12">
         <p-table [value]="categories" styleClass="p-datatable-gridlines" [paginator]="true" [rows]="10" [showCurrentPageReport]="true" responsiveLayout="scroll"
         currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries" [rowsPerPageOptions]="[10,25,50]">
           <ng-template pTemplate="header">
@@ -42,18 +42,22 @@
                 ></i>
               </td>
               <td>
-                <p-button
-                (click)="updateCategory(category.id)"
-                styleClass="p-button-success"
-                icon="pi pi-pencil"
-              ></p-button>
+                <button pButton 
+                pRipple 
+                type="button" 
+                icon="pi pi-pencil" 
+                class="p-button-rounded"
+                (click)="updateCategory(category.id)">
+              </button>
               </td>
               <td>
-                <p-button
-                  (click)="deleteCategory(category.id)"
-                  styleClass="p-button-danger p-mr-2"
-                  icon="pi pi-trash"
-                ></p-button>
+                <button pButton 
+                pRipple 
+                type="button" 
+                icon="pi pi-trash" 
+                class="p-button-rounded p-button-danger"
+                (click)="deleteCategory(category.id)">
+              </button>
               </td>
             </tr>
           </ng-template>

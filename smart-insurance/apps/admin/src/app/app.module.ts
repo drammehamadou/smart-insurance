@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import {CardModule} from 'primeng/card';
 import {ConfirmDialogModule} from 'primeng/confirmdialog';
@@ -9,6 +10,8 @@ import {ToolbarModule} from 'primeng/toolbar';
 import {ButtonModule} from 'primeng/button';
 import {TableModule} from 'primeng/table';
 import {ToastModule} from 'primeng/toast';
+import { InputTextModule } from 'primeng/inputtext';
+import { ColorPickerModule } from 'primeng/colorpicker';
 
 import { AppComponent } from './app.component';
 import { RouterModule, Routes } from '@angular/router';
@@ -25,7 +28,8 @@ const routes: Routes = [
   children: [
     { path: 'dashboard', component: DashboardComponent },
     { path: 'categories', component: CategoriesListComponent },
-    { path: 'categories:id', component: CategoriesListComponent }
+    { path: 'categories/form', component: CategoriesFormComponent },
+    { path: 'categories/form/:id', component: CategoriesFormComponent }
   ] 
 },
  
@@ -49,6 +53,10 @@ const routes: Routes = [
     ButtonModule,
     TableModule,
     ToastModule,
+    InputTextModule,
+    ColorPickerModule,
+    FormsModule, 
+    ReactiveFormsModule,
     RouterModule.forRoot(routes, { initialNavigation: 'enabledBlocking' }),
   ],
   providers: [CategoriesService,
