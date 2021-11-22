@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { UiModule } from '@smart-insurance/ui';
-import { OrdersModule } from '@smart-insurance/orders'
+import { CartService, OrdersModule } from '@smart-insurance/orders'
 
 import {ButtonModule} from 'primeng/button';
 import {DataViewModule} from 'primeng/dataview';
@@ -28,13 +28,16 @@ import { NavComponent } from './shared/nav/nav.component';
 import { NewsComponent } from './pages/news/news.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { CartComponent } from './pages/cart/cart.component';
 
 const routes: Routes = [
   { path: '', component: HomePageComponent },
   { path: 'aboutus', component: AboutusComponent },
   { path: 'news', component: NewsComponent },
   { path: 'contactus', component: ContactusComponent },
-  {path: 'packages', component: ProductListComponent}
+  {path: 'products/:productId', component: ProductFormComponent},
+  {path: 'packages', component: ProductListComponent},
+  {path: 'cart', component: CartComponent}
 ]
 
 @NgModule({
@@ -46,7 +49,9 @@ const routes: Routes = [
     AboutusComponent, 
     HeaderComponent, 
     FooterComponent, 
-    NavComponent, NewsComponent],
+    NavComponent, 
+    NewsComponent, 
+    CartComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
@@ -65,7 +70,7 @@ const routes: Routes = [
     OrdersModule,
     RouterModule.forRoot(routes)
   ],
-  providers: [ConfirmationService, MessageService],
+  providers: [ConfirmationService, MessageService, CartService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
