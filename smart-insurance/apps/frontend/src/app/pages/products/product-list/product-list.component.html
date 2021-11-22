@@ -1,42 +1,32 @@
-<h1>Put your family first with Smart Family Life Insurance</h1>
-
-<h3>Getting a quote is stress-free and easy</h3>
-
-<h5>We’re rated gold by Fairer Finance for Customer Experience and Platinum by Feefo for customer service, so you’re in good hands with Smart Insurance®</h5>
 <p-toast></p-toast>
 <div class="card">
     <p-dataView #dv [value]="products" [paginator]="true" [rows]="9" filterBy="name"
         [sortField]="sortField" [sortOrder]="sortOrder" layout="grid">
         <ng-template pTemplate="header">
             <div class="p-d-flex p-flex-column p-flex-md-row p-jc-md-between">
-                <!-- <p-dropdown [options]="sortOptions" [(ngModel)]="sortKey" placeholder="Sort By Price" (onChange)="onSortChange($event)" styleClass="p-mb-2 p-mb-md-0"></p-dropdown> -->
-                <span class="p-input-icon-left p-mb-2 p-mb-md-0">
-                    <i class="pi pi-search"></i> 
-                    <!-- <input type="search" pInputText placeholder="Search by Name" (input)="dv.filter($event.target.value)"> -->
-                </span>
                 <p-dataViewLayoutOptions></p-dataViewLayoutOptions>
             </div>
         </ng-template>
         <ng-template let-product pTemplate="listItem">
             <div class="p-col-12">
                 <div class="product-list-item">
-                    <img [src]="'assets/showcase/images/one' + product.image" [alt]="product.name"/>
+                    <img [src]="product.image" style="width: 250px" alt="product image" />
                     <div class="product-list-detail">
                         <div class="product-name">{{product.name}}</div>
-                        <div class="product-coverage">{{product.coverage}}</div>
                         <div class="product-productType">{{product.productType}}</div>
+                        <div class="product-coverage">{{product.coverage}}</div>
                         <div class="product-description">{{product.description}}</div>
                         <p-rating [ngModel]="product.rating" [readonly]="true" [cancel]="false"></p-rating>
                         <i class="pi pi-tag product-category-icon"></i><span class="product-category">{{product.category.name}}</span>
                     </div>
                     <div class="product-list-action">
-                        <span class="product-price">{{product.price |currency:"GBP":"symbol"}}</span>
-                        <!-- <p-button icon="pi pi-shopping-cart" label="Add to Cart" [disabled]="product.inventoryStatus === 'OUTOFSTOCK'"></p-button>
-                        <span [class]="'product-badge status-' + product.inventoryStatus.toLowerCase()">{{product.inventoryStatus}}</span> -->
+                        <span class="product-price">{{product.price |currency:"GBP":"symbol"}}pm</span>
+                        <p-button icon="pi pi-shopping-cart" label="Buy Package" [disabled]="product.inventoryStatus === 'UNAVAILABLE'"></p-button>
                     </div>
                 </div>
             </div>
         </ng-template>
+
         <ng-template let-product pTemplate="gridItem">
             <div class="p-col-12 p-md-4">
                 <div class="product-grid-item card">
@@ -45,10 +35,9 @@
                             <i class="pi pi-tag product-category-icon"></i>
                             <span class="product-category">{{product.category.name}}</span>
                         </div>
-                        <!-- <span [class]="'product-badge status-' + product.inventoryStatus.toLowerCase()">{{product.inventoryStatus}}</span> -->
                     </div>
                     <div class="product-grid-item-content">
-                        <img [src]="product.image" style="width: 250px" alt="" />
+                        <img [src]="product.image" style="width: 250px" alt="product image" />
                         <div class="product-name">{{product.name}}</div>
                         <div class="product-productType">{{product.productType}}</div>
                         <div class="product-coverage">{{product.coverage}}</div>
@@ -56,8 +45,8 @@
                         <p-rating [ngModel]="product.rating" [readonly]="true" [cancel]="false"></p-rating>
                     </div>
                     <div class="product-grid-item-bottom">
-                        <span class="product-price">{{product.price |currency:"GBP":"symbol"}}</span>
-                        <p-button icon="pi pi-shopping-cart" [disabled]="product.inventoryStatus === 'OUTOFSTOCK'"></p-button>
+                        <span class="product-price">{{product.price |currency:"GBP":"symbol"}}pm</span>
+                        <p-button icon="pi pi-shopping-cart" label="Buy Package" [disabled]="product.inventoryStatus === 'UNAVAILABLE'"></p-button>
                     </div>
                 </div>
             </div>

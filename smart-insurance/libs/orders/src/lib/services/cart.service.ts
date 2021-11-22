@@ -5,5 +5,14 @@ import { Injectable } from '@angular/core';
 })
 export class CartService {
 
-  constructor() { }
+  constructor() {}
+
+  initCartLocalStorage() {
+    const intialCart = {
+      // @ts-ignore
+      items: [] 
+    }
+    const intialCartJson =JSON.stringify(intialCart)
+    localStorage.setItem('cart', intialCartJson)
+  }
 }
