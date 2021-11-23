@@ -5,7 +5,7 @@ import { environment } from '@env/environment';
 import { Product } from '../models/product';
 
 @Injectable({
-  providedIn: 'root' 
+  providedIn: 'root'
 })
 export class ProductsService {
   apiURLProducts = environment.apiUrl + 'products';

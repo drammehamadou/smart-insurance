@@ -12,6 +12,12 @@ import {TableModule} from 'primeng/table';
 import {ToastModule} from 'primeng/toast';
 import { InputTextModule } from 'primeng/inputtext';
 import { ColorPickerModule } from 'primeng/colorpicker';
+import {TooltipModule} from 'primeng/tooltip';
+import { InputNumberModule } from 'primeng/inputnumber';
+import { DropdownModule } from 'primeng/dropdown';
+import { InputTextareaModule } from 'primeng/inputtextarea';
+import { InputSwitchModule } from 'primeng/inputswitch';
+import { EditorModule } from 'primeng/editor';
 
 import { AppComponent } from './app.component';
 import { RouterModule, Routes } from '@angular/router';
@@ -22,6 +28,10 @@ import { CategoriesListComponent } from './pages/categories/categories-list/cate
 import { CategoriesFormComponent } from './pages/categories/categories-form/categories-form.component';
 import { CategoriesService } from '@smart-insurance/products';
 import { HttpClientModule } from '@angular/common/http';
+import { ProductsFormComponent } from './pages/products/products-form/products-form.component';
+import { ProductsListComponent } from './pages/products/products-list/products-list.component';
+import { UsersFormComponent } from './pages/users/users-form/users-form.component';
+import { UsersListComponent } from './pages/users/users-list/users-list.component';
 
 const routes: Routes = [
   { path: '', component: ShellComponent,
@@ -29,7 +39,10 @@ const routes: Routes = [
     { path: 'dashboard', component: DashboardComponent },
     { path: 'categories', component: CategoriesListComponent },
     { path: 'categories/form', component: CategoriesFormComponent },
-    { path: 'categories/form/:id', component: CategoriesFormComponent }
+    { path: 'categories/form/:id', component: CategoriesFormComponent },
+    { path: 'packages', component: ProductsListComponent },
+    { path: 'packages/form', component: ProductsFormComponent },
+    { path: 'products/form/:id', component: ProductsFormComponent }
   ] 
 },
  
@@ -42,7 +55,7 @@ const routes: Routes = [
     ShellComponent, 
     SidebarComponent, 
     CategoriesListComponent, 
-    CategoriesFormComponent],
+    CategoriesFormComponent, ProductsFormComponent, ProductsListComponent, UsersFormComponent, UsersListComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
@@ -57,6 +70,12 @@ const routes: Routes = [
     ColorPickerModule,
     FormsModule, 
     ReactiveFormsModule,
+    TooltipModule,
+    InputNumberModule,
+    DropdownModule,
+    InputTextareaModule,
+    InputSwitchModule,
+    EditorModule,
     RouterModule.forRoot(routes, { initialNavigation: 'enabledBlocking' }),
   ],
   providers: [CategoriesService,

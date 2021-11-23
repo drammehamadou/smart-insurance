@@ -1,12 +1,12 @@
 <p-toast></p-toast>
 <div class="admin-page">
-  <p-card header="Categories" subheader="List of all categories">
+  <p-card header="Categories" subheader="List of all the insurance categories">
     <div class="grid">
       <div class="col-12 md:col-6 lg:col-12">
         <p-toolbar>
           <div class="p-toolbar-group-left">
             <p-button
-              styleClass="p-button-primary"
+              styleClass="p-button-success"
               label="New"
               icon="pi pi-plus"
               routerLink="form"
@@ -23,8 +23,8 @@
             <tr>
                 <th>#</th>
               <th pSortableColumn="name">Name <p-sortIcon field="name"></p-sortIcon></th>
-              <th>Icon</th>
-              <th>Color</th>
+              <!-- <th>Icon</th>
+              <th>Color</th> -->
               <th>Edit</th>
               <th>Delete</th>
             </tr>
@@ -33,20 +33,21 @@
             <tr>
                 <td>{{i + 1}}</td>
               <td>{{ category.name }}</td>
-              <td><i style="font-size: 2rem" class="pi" [ngClass]="'pi-' + category.icon"></i></td>
+              <!-- <td><i style="font-size: 2rem" class="pi" [ngClass]="'pi-' + category.icon"></i></td>
               <td>
                 <i
                   class="pi pi-circle-on"
                   style="font-size: 2rem"
                   [ngStyle]="{ color: category.color }"
                 ></i>
-              </td>
+              </td> -->
               <td>
                 <button pButton 
                 pRipple 
                 type="button" 
                 icon="pi pi-pencil" 
-                class="p-button-rounded"
+                class="p-button-rounded p-button-success"
+                pTooltip="Edit the {{category.name}}" tooltipPosition="left"
                 (click)="updateCategory(category.id)">
               </button>
               </td>
@@ -56,6 +57,7 @@
                 type="button" 
                 icon="pi pi-trash" 
                 class="p-button-rounded p-button-danger"
+                pTooltip="Delete the {{category.name}}" tooltipPosition="left"
                 (click)="deleteCategory(category.id)">
               </button>
               </td>

@@ -8,7 +8,7 @@
         <div><span>Category: {{ package.category.name }}</span></div>
         <div><span>Type: {{ package.productType }}</span></div>
         <div><span>Coverage: {{ package.coverage }}</span></div>
-        <div><span>Price: {{ package.price | currency }}</span></div>
+        <div><span>Price: {{ package.price |currency:"GBP":"symbol" }}</span></div>
         <br>
         <button pButton pRipple type="button" label="Buy" class="p-button-rounded"></button>
       </div>
