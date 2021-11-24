@@ -18,8 +18,13 @@ describe('HeaderComponent', () => {
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
-
-  it('should show logo', () => {
-    expect(fixture.nativeElement.querySelector('[data-test="logo"]')).toBeTruthy();
+  //testing components
+  it('should create', () => {
+    expect(component).toBeTruthy();
   });
+  //testing logo on header
+  it('should show logo', () => {
+    expect(fixture.nativeElement.querySelector('[class="logo"]')).toBeTruthy();
+  });
+  
 });

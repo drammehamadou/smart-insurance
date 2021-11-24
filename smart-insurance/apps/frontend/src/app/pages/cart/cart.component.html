@@ -3,14 +3,15 @@
 <p-card>
   <div class="grid">
     <div class="col-12 md:col-6 lg:col-3">
-      <div class="cart-item" *ngFor="let package of packages">
-        <div><span>Package Name: {{ package.name }}</span></div>
-        <div><span>Category: {{ package.category.name }}</span></div>
-        <div><span>Type: {{ package.productType }}</span></div>
-        <div><span>Coverage: {{ package.coverage }}</span></div>
-        <div><span>Price: {{ package.price |currency:"GBP":"symbol" }}</span></div>
+      <div class="cart-item" *ngFor="let items of items ">
+        <div><span>Package Name: {{ items .name }}</span></div>
+        <div><span>Category: {{ items .category.name }}</span></div>
+        <div><span>Type: {{ items .productType }}</span></div>
+        <div><span>Coverage: {{ items .coverage }}</span></div>
+        <div><span>Price: {{ items .price |currency:"GBP":"symbol" }}</span></div>
+        <div><span>Administration fee: £10</span></div>
         <br>
-        <button pButton pRipple type="button" label="Buy" class="p-button-rounded"></button>
+        <button pButton pRipple type="button" label="Checkout" class="p-button-rounded"></button>
       </div>
     </div>
   </div>

@@ -37,19 +37,19 @@
 import { Product } from '@smart-insurance/products';
 
 export class CartService {
-  pacakages: Product[] = [];
+  items: Product[] = [];
 
   addToCart(product: Product) {
-    this.pacakages.push(product);
+    this.items.push(product);
   }
 
   getItems() {
-    return this.pacakages;
+    return this.items;
   }
 
   clearCart() {
-    this.pacakages = [];
-    return this.pacakages;
+    this.items = [];
+    return this.items;
   }
 
 }

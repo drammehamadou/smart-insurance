@@ -13,7 +13,7 @@ export class UsersService {
   apiURLUsers = environment.apiUrl + 'users';
 
   constructor(private http: HttpClient) {
-    countriesLib.registerLocale(require('i18n-iso-countries/langs/en.json'));
+    countriesLib.registerLocale(require ('i18n-iso-countries/langs/en.json'));
   }
 
   getUsers(): Observable<User[]> {

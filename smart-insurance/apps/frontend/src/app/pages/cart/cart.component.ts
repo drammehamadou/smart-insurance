@@ -7,7 +7,7 @@ import { CartService } from '@smart-insurance/orders';
   styleUrls: ['./cart.component.scss']
 })
 export class CartComponent implements OnInit {
-  packages = this.cartService.getItems();
+  items  = this.cartService.getItems();
 
   constructor(private cartService: CartService) { }
 
