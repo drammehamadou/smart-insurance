@@ -60,7 +60,7 @@ export class ProductsFormComponent implements OnInit {
         this.messageService.add({
           severity: 'success',
           summary: 'Success',
-          detail: `Product ${product.name} is created!`
+          detail: `Package ${product.name} is created!`
         });
         timer(2000)
           .toPromise()
@@ -72,7 +72,7 @@ export class ProductsFormComponent implements OnInit {
         this.messageService.add({
           severity: 'error',
           summary: 'Error',
-          detail: 'Product is not created!'
+          detail: 'Package is not created!'
         });
       }
     );
@@ -84,7 +84,7 @@ export class ProductsFormComponent implements OnInit {
         this.messageService.add({
           severity: 'success',
           summary: 'Success',
-          detail: 'Product is updated!'
+          detail: 'Package is updated!'
         });
         timer(2000)
           .toPromise()
@@ -96,7 +96,7 @@ export class ProductsFormComponent implements OnInit {
         this.messageService.add({
           severity: 'error',
           summary: 'Error',
-          detail: 'Product is not updated!'
+          detail: 'Package is not updated!'
         });
       }
     );
@@ -140,7 +140,9 @@ export class ProductsFormComponent implements OnInit {
       this._addProduct(productFormData);
     }
   }
-  onCancle() {}
+  onCancle() {
+    this.location.back();
+  }
 
   onImageUpload(event) {
     const file = event.target.files[0];

@@ -56,8 +56,7 @@
           <div class="p-fluid p-formgrid grid"> -->
             <div class="p-field col-12 md:col-6 lg:col-6">
               <label for="coverage">Coverage</label><br />
-              <p-inputNumber formControlName="coverage" mode="decimal" [useGrouping]="false">
-              </p-inputNumber>
+              <input formControlName="coverage" id="coverage" type="text" pInputText />
               <small *ngIf="productForm.coverage.invalid && isSubmitted" class="p-error"
                 >Coverage is required</small
               >

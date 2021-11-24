@@ -18,6 +18,8 @@ import { DropdownModule } from 'primeng/dropdown';
 import { InputTextareaModule } from 'primeng/inputtextarea';
 import { InputSwitchModule } from 'primeng/inputswitch';
 import { EditorModule } from 'primeng/editor';
+import { TagModule } from 'primeng/tag';
+import { InputMaskModule } from 'primeng/inputmask';
 
 import { AppComponent } from './app.component';
 import { RouterModule, Routes } from '@angular/router';
@@ -42,7 +44,10 @@ const routes: Routes = [
     { path: 'categories/form/:id', component: CategoriesFormComponent },
     { path: 'packages', component: ProductsListComponent },
     { path: 'packages/form', component: ProductsFormComponent },
-    { path: 'products/form/:id', component: ProductsFormComponent }
+    { path: 'products/form/:id', component: ProductsFormComponent },
+    { path: 'users', component: UsersListComponent },
+    { path: 'users/form', component: UsersFormComponent },
+    { path: 'users/form/:id', component: UsersFormComponent }
   ] 
 },
  
@@ -76,6 +81,8 @@ const routes: Routes = [
     InputTextareaModule,
     InputSwitchModule,
     EditorModule,
+    TagModule,
+    InputMaskModule,
     RouterModule.forRoot(routes, { initialNavigation: 'enabledBlocking' }),
   ],
   providers: [CategoriesService,
