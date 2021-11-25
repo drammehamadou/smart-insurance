@@ -24,6 +24,7 @@ describe('HomePageComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+  //test to apply tdd
   //testing heading
   it('should show heading', () => {
     expect(fixture.nativeElement.querySelector('[data-test="heading"]')).toBeTruthy();
