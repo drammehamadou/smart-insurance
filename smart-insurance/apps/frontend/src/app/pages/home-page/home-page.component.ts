@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Product, ProductsService } from '@smart-insurance/products';
 
 @Component({
   selector: 'smart-insurance-home-page',
@@ -6,9 +7,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home-page.component.scss']
 })
 export class HomePageComponent implements OnInit {
+  products: Product[] = [];
 
-  constructor() { }
+  constructor(private productsService: ProductsService) { }
 
   ngOnInit(): void {
+    this.productsService.getProducts().subscribe((products) => {
+      this.products = products;
+    });
   }
+
 }
+

@@ -25,6 +25,6 @@ describe('NavComponent', () => {
 
    //testing nav
    it('should show nav', () => {
-    expect(fixture.nativeElement.querySelector('[data-test="nav"]')).toBeTruthy();
+    expect(fixture.nativeElement.querySelector('[class="nav"]')).toBeTruthy();
   });
 });

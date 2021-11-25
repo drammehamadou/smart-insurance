@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { UiModule } from '@smart-insurance/ui';
 import { CartService, OrdersModule } from '@smart-insurance/orders'
+import { RouterTestingModule } from "@angular/router/testing";
 
 import {ButtonModule} from 'primeng/button';
 import {DataViewModule} from 'primeng/dataview';
@@ -64,6 +65,7 @@ const routes: Routes = [
     DropdownModule,
     FormsModule,
     OrdersModule,
+    RouterTestingModule,
     RouterModule.forRoot(routes)
   ],
   providers: [ConfirmationService, MessageService, CartService],

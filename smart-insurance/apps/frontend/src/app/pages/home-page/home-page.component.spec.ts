@@ -22,16 +22,21 @@ describe('HomePageComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
-  //testing home
-  it('should show home', () => {
-    expect(fixture.nativeElement.querySelector('[data-test="home"]')).toBeTruthy();
+  //testing heading
+  it('should show heading', () => {
+    expect(fixture.nativeElement.querySelector('[data-test="heading"]')).toBeTruthy();
   });
   //testing sub-heading
   it('should show sub-heading', () => {
     expect(fixture.nativeElement.querySelector('[data-test="sub-heading"]')).toBeTruthy();
   });
-  //testing customer
-  it('should show customer', () => {
-    expect(fixture.nativeElement.querySelector('[data-test="customer"]')).toBeTruthy();
+  //testing rated-message
+  it('should show rated-message', () => {
+    expect(fixture.nativeElement.querySelector('[data-test="rated-message"]')).toBeTruthy();
+  });
+
+  //testing list of packages
+  it('should show packages', () => {
+    expect(fixture.nativeElement.querySelectorAll('[data-test="package"]').length).toBe(3);
   });
 });
