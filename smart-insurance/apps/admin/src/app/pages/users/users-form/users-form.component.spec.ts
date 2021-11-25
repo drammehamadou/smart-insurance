@@ -22,4 +22,8 @@ describe('UsersFormComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+   //testing admin-page
+   it('should show admin-page', () => {
+    expect(fixture.nativeElement.querySelector('[data-test="admin-page"]')).toBeTruthy();
+  });
 });
