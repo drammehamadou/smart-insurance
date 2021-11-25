@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { CartService } from '@smart-insurance/orders';
-import { ProductsService, Product } from '@smart-insurance/products';
+import { ProductsService, Product, products } from '@smart-insurance/products';
 import {SelectItem} from 'primeng/api';
 import { ActivatedRoute } from '@angular/router';
 

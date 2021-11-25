@@ -1,13 +1,13 @@
 export class Cart {
-    items?: CartItem[];
+  packages?: CartPackage[];
   }
   
-  export class CartItem {
+  export class CartPackage {
     productId?: string;
     quantity?: number;
   }
   
-  export class CartItemDetailed {
+  export class CartPackageDetailed {
     product?: any;
     quantity?: number;
   }

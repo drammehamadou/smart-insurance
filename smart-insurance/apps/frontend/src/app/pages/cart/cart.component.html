@@ -3,12 +3,12 @@
 <p-card>
   <div class="grid">
     <div class="col-12 md:col-6 lg:col-3">
-      <div class="cart-item" *ngFor="let items of items ">
-        <div><span>Package Name: {{ items .name }}</span></div>
-        <div><span>Category: {{ items .category.name }}</span></div>
-        <div><span>Type: {{ items .productType }}</span></div>
-        <div><span>Coverage: {{ items .coverage }}</span></div>
-        <div><span>Price: {{ items .price |currency:"GBP":"symbol" }}</span></div>
+      <div class="cart-package" *ngFor="let packages of packages ">
+        <div><span>Package Name: {{ packages.name }}</span></div>
+        <div><span>Category: {{ packages.category.name }}</span></div>
+        <div><span>Type: {{ packages.productType }}</span></div>
+        <div><span>Coverage: {{ packages.coverage }}</span></div>
+        <div><span>Price: {{ packages.price |currency:"GBP":"symbol" }}</span></div>
         <div><span>Administration fee: £10</span></div>
         <br>
         <button pButton pRipple type="button" label="Checkout" class="p-button-rounded"></button>

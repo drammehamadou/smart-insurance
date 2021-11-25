@@ -22,4 +22,16 @@ describe('HomePageComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+  //testing home
+  it('should show home', () => {
+    expect(fixture.nativeElement.querySelector('[data-test="home"]')).toBeTruthy();
+  });
+  //testing sub-heading
+  it('should show sub-heading', () => {
+    expect(fixture.nativeElement.querySelector('[data-test="sub-heading"]')).toBeTruthy();
+  });
+  //testing customer
+  it('should show customer', () => {
+    expect(fixture.nativeElement.querySelector('[data-test="customer"]')).toBeTruthy();
+  });
 });

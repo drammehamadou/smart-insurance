@@ -1,5 +1,5 @@
 // import { Injectable } from '@angular/core';
-// import { Cart, CartItem } from '../models/cart';
+// import { Cart, CartPackage } from '../models/cart';
 
 // export const CART_KEY = "cart"
 
@@ -13,23 +13,23 @@
 //   initCartLocalStorage() {
 //     const intialCart = {
 //       // @ts-ignore
-//       items: []
+//       packages: []
 //     }
 //     const intialCartJson =JSON.stringify(intialCart)
-//     localStorage.setItem(CART_KEY, intialCartJson)
+//     localStorage.setPackage(CART_KEY, intialCartJson)
 //   }
 
 //   getCart() : Cart {
-//     const cartJsonString: string = localStorage.getItem(CART_KEY);
+//     const cartJsonString: string = localStorage.getPackage(CART_KEY);
 //     const cart: Cart = JSON.parse(cartJsonString);
 //     return cart
 //   }
 
-//   setCartItem(cartItem: CartItem) : Cart {
+//   setCartPackage(cartPackage: CartPackage) : Cart {
 //     const cart = this.getCart();
-//     cart.items.push(cartItem);
+//     cart.packages.push(cartPackage);
 //     const cartJson =JSON.stringify(cart)
-//     localStorage.setItem(CART_KEY, cartJson)
+//     localStorage.setPackage(CART_KEY, cartJson)
 //     return cart;
 //   }
 // }
@@ -37,19 +37,19 @@
 import { Product } from '@smart-insurance/products';
 
 export class CartService {
-  items: Product[] = [];
+  packages: Product[] = [];
 
   addToCart(product: Product) {
-    this.items.push(product);
+    this.packages.push(product);
   }
 
-  getItems() {
-    return this.items;
+  getPackages() {
+    return this.packages;
   }
 
   clearCart() {
-    this.items = [];
-    return this.items;
+    this.packages = [];
+    return this.packages;
   }
 
 }

@@ -1,8 +1,8 @@
 <p-toast></p-toast>
 <div class="admin-page">
   <p-card header="Users" subheader="List of all users">
-    <div class="p-grid">
-      <div class="p-col-12">
+    <div class="grid">
+      <div class="col-12 md:col-6 lg:col-12">
         <p-toolbar>
           <div class="p-toolbar-group-left">
             <p-button
@@ -15,16 +15,22 @@
         </p-toolbar>
       </div>
     </div>
-    <div class="p-grid">
-      <div class="p-col-12">
-        <p-table [value]="users" styleClass="p-datatable-gridlines">
+    <div class="grid">
+      <div class="col-12 md:col-6 lg:col-12">
+        <p-table [value]="users" styleClass="p-datatable-gridlines" [paginator]="true" [rows]="10" [showCurrentPageReport]="true" responsiveLayout="scroll"
+        currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries" [rowsPerPageOptions]="[10,25,50]">
           <ng-template pTemplate="header">
             <tr>
               <th pSortableColumn="name">Name <p-sortIcon field="name"></p-sortIcon></th>
               <th>Email</th>
               <th>Membership</th>
-              <th>Is Admin</th>
+              <th>Phone</th>
+              <th>Address 1</th>
+              <th>Address 2</th>
+              <th>Post Code</th>
+              <th>County</th>
               <th>Country</th>
+              <!-- <th>Is Admin</th> -->
               <th>Edit</th>
               <th>Delete</th>
             </tr>
@@ -34,7 +40,12 @@
               <td>{{ user.name }}</td>
               <td>{{ user.email }}</td>
               <td>{{ user.membership }}</td>
-              <td>
+              <td>{{ user.phone }}</td>
+              <td>{{ user.address1 }}</td>
+              <td>{{ user.address2 }}</td>
+              <td>{{ user.postcode }}</td>
+              <td>{{ user.county }}</td>
+              <!-- <td>
                 <p-tag
                   *ngIf="user.isAdmin"
                   icon="pi pi-check"
@@ -47,7 +58,7 @@
                   severity="danger"
                   [rounded]="true"
                 ></p-tag>
-              </td>
+              </td> -->
               <td>{{ getCountryName(user.country) }}</td>
               <td>
                 <p-button

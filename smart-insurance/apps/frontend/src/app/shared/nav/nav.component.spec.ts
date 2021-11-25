@@ -22,4 +22,9 @@ describe('NavComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+   //testing nav
+   it('should show nav', () => {
+    expect(fixture.nativeElement.querySelector('[data-test="nav"]')).toBeTruthy();
+  });
 });
